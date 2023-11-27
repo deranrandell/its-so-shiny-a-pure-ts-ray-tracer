@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="favicon.ico"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>d-_-b</title>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="./style.css"
+    />
+  </head>
+  <script>
+    function generateColorOptions() {
+      const colors = ["White", "Black", "Grey", "Red", "Green", "Blue", "Yellow", "Magenta", "Cyan", "Orange", "Purple", "Brown", "Pink", "Lavendar", "Teal", "Olive", "Navy"];
+      const colorOptions = colors.map((color) => `<option value="${color}">${color}</option>`).join("");
+      document.write(colorOptions);
+    }
+  </script>
+  <body>
+    <form>
+      <div id="scene-params">
+        <label for="scene-params">Render Control</label>
+        <div>
+          <select
+            id="scene-selector"
+            name="sceneSelector"
+          >
+            <option value="1">Scene 1</option>
+            <option value="2">Scene 2</option>
+            <option value="3">Scene 3</option>
+            <option value="4">Scene 4</option>
+            <option value="5">Scene 5</option>
+          </select>
+        </div>
+        <div>
+          <label for="worker-selector">No. of Workers</label>
+          <select
+            id="worker-selector"
+            name="workerSelector"
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="thread-selector ">No. of Threads</label>
+          <select
+            id="thread-selector"
+            name="threadSelector"
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+        </div>
+        <div>
+          <input
+            type="button"
+            id="render-button"
+            name="renderButton"
+            value="Render"
+          />
+          <input
+            type="button"
+            id="cancel-button"
+            name="cancelButton"
+            value="Cancel"
+          />
+        </div>
+      </div>
+
+      <div id="light-params">
+        <label for="light-params">Light Params</label>
+        <select
+          id="light-color"
+          name="lightColor"
+        >
+          <script>
+            generateColorOptions();
+          </script>
+        </select>
+        <label for="light-pos-x">x:</label>
+        <input
+          type="range"
+          id="light-pos-x"
+          name="lightPosX"
+          min="-100"
+          max="100"
+          step="1"
+          value="-30"
+        />
+
+        <label for="light-pos-y">y:</label>
+        <input
+          type="range"
+          id="light-pos-y"
+          name="lightPosY"
+          min="-100"
+          max="100"
+          step="1"
+          value="25"
+        />
+
+        <label for="light-pos-z">z:</label>
+        <input
+          type="range"
+          id="light-pos-z"
+          name="lightPosZ"
+          min="-100"
+          max="100"
+          step="1"
+          value="-12"
+        />
+      </div>
+
+      <div id="camera-params">
+        <label for="camera-params">Camera Params</label>
+        <div id="camera-controls">
+          <div id="camera-from">
+            <label for="camera-from">Camera Position</label>
+
+            <label for="camera-from-pos-x">x:</label>
+            <input
+              type="range"
+              id="camera-from-pos-x"
+              s
+              name="cameraFromPosX"
+              min="-100"
+              max="100"
+              step="1"
+              value="0"
+            />
+
+            <label for="camera-from-pos-y">y:</label>
+            <input
+              type="range"
+              id="camera-from-pos-y"
+              name="cameraFromPosY"
+              min="-100"
+              max="100"
+              step="1"
+              value="10"
+            />
+
+            <label for="camera-from-pos-z">z:</label>
+            <input
+              type="range"
+              id="camera-from-pos-z"
+              name="cameraFromPosZ"
+              min="-100"
+              max="100"
+              step="1"
+              value="-28"
+            />
+          </div>
+
+          <div id="camera-to">
+            <label
+              for="camera-to"
+              camera-to
+              >Point To Look At</label
+            >
+
+            <label for="camera-to-pos-x">x:</label>
+            <input
+              type="range"
+              id="camera-to-pos-x"
+              name="cameraToPosX"
+              min="-100"
+              max="100"
+              step="1"
+              value="4"
+            />
+
+            <label for="camera-to-pos-y">y:</label>
+            <input
+              type="range"
+              id="camera-to-pos-y"
+              name="cameraToPosY"
+              min="-100"
+              max="100"
+              step="1"
+              value="2"
+            />
+
+            <label for="camera-to-pos-z">z:</label>
+            <input
+              type="range"
+              id="camera-to-pos-z"
+              name="cameraToPosZ"
+              min="-100"
+              max="100"
+              step="1"
+              value="4"
+            />
+          </div>
+        </div>
+      </div>
+      <div id="reflection-params">
+        <label for="back-color">Background</label>
+        <select
+          id="back-color"
+          name="backColor"
+        >
+          <script>
+            generateColorOptions();
+          </script>
+        </select>
+
+        <label for="reflection-value">Reflection:</label>
+        <input
+          type="range"
+          id="reflection-value"
+          name="reflectionvalue"
+          min="-10"
+          max="10"
+          step="1"
+          value="5"
+        />
+
+        <label for="shine-value">Shine:</label>
+        <input
+          type="range"
+          id="shine-value"
+          name="shineValue"
+          min="-10"
+          max="10"
+          step="1"
+          value="8"
+        />
+
+        <label for="floor-pattern">Base Pattern</label>
+        <select
+          id="floor-pattern"
+          name="floorPattern"
+        >
+          <option value="None">None</option>
+          <option value="Solid">Solid</option>
+          <option value="Stripes">Stripes</option>
+          <option value="Checkered">Checkered</option>
+          <option value="Gradient">Gradient</option>
+        </select>
+        <label for="floor-pattern">Base Colors</label>
+        <select
+          id="floor-color1"
+          name="floorColor1"
+        >
+          <script>
+            generateColorOptions();
+          </script>
+        </select>
+        <select
+          id="floor-color2"
+          name="floorColor2"
+        >
+          <script>
+            generateColorOptions();
+          </script>
+        </select>
+      </div>
+    </form>
+
+    <canvas
+      id="rendering-environment"
+      width="1280"
+      height="720"
+      style="width: 1280px; height: 720px"
+    ></canvas>
+  </body>
+
+  <script
+    type="module"
+    src="./main.ts"
+  ></script>
+</html>

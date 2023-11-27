@@ -1,0 +1,68 @@
+/* Global Styles */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+canvas {
+  margin-top: 10px;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* Scene Parameters Styles */
+#scene-params,
+#light-params,
+#reflection-params,
+#camera-params {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 10px;
+}
+
+#scene-params label,
+#light-params label,
+#reflection-params label,
+#camera-params label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+#scene-params select {
+  margin-bottom: 6px;
+}
+/* Light Parameters Styles */
+#light-color,
+#light-params select {
+  display: block;
+  margin-bottom: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+/* Camera Parameters Styles */
+#camera-controls {
+  display: flex;
+  flex-direction: row;
+}
+
+#camera-from,
+#camera-to {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
